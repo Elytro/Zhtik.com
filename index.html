@@ -1,1 +1,415 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>抖音国际版 | Tiktok跨境电商出海门户</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Meta tags -->
+    <meta name="keywords" content="抖音,跨境,TikTok,跨境电商,抖音国际版">
+    <meta name="description" content="抖音国际版(www.zhtik.com)是一家致力于服务中国TikTok跨境电商从业者的综合平台，以让TikTok跨境电商出海更便捷为使命，始终围绕卖家需求，为卖家提供实时的跨境资讯，实用的跨境干货、工具、数据和服务，打造一站式跨境流量入口。做跨境电商，就上zhtik.com。">
+    <!-- Open Graph -->
+    <meta property="og:title" content="抖音国际版 | Tiktok跨境电商出海门户">
+    <meta property="og:type" content="WebSite">
+    <meta property="og:url" content="https://www.zhtik.com/">
+    <meta property="og:image" content="https://apps.qtimg.com/assets/brand/d3b7c2d7d4cebe86.png">
+    <meta property="og:description" content="抖音国际版(www.zhtik.com)是一家致力于服务中国TikTok跨境电商从业者的综合平台，以让TikTok跨境电商出海更便捷为使命，始终围绕卖家需求，为卖家提供实时的跨境资讯，实用的跨境干货、工具、数据和服务，打造一站式跨境流量入口。做跨境电商，就上zhtik.com。">
+    <meta property="og:site_name" content="抖音国际版 | Tiktok跨境电商出海门户">
+    <link href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+            background: #fff;
+            font-family: 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+            color: #333;
+        }
+        /* 主体 */
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 60px 15px 40px;
+        }
+        .logo-area {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .logo-area h1 {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #e74c3c, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 6px;
+            letter-spacing: 2px;
+        }
+        .logo-area .slogan {
+            font-size: 14px;
+            color: #aaa;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* 搜索框 */
+        .search-box {
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+        .search-box .input-group {
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-radius: 30px;
+            overflow: hidden;
+            transition: box-shadow .3s;
+        }
+        .search-box .input-group:hover,
+        .search-box .input-group:focus-within {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        .search-box .form-control {
+            height: 52px;
+            border: 1.5px solid #eee;
+            border-right: none;
+            border-radius: 30px 0 0 30px;
+            padding: 6px 22px;
+            font-size: 15px;
+            box-shadow: none;
+            transition: border-color .3s;
+        }
+        .search-box .form-control:focus {
+            border-color: #3498db;
+        }
+        .search-box .input-group-btn .btn {
+            height: 52px;
+            border: 1.5px solid #eee;
+            border-left: none;
+            border-radius: 0 30px 30px 0;
+            padding: 6px 28px;
+            font-size: 15px;
+            color: #fff;
+            background: linear-gradient(135deg, #e74c3c, #3498db);
+            transition: opacity .3s;
+        }
+        .search-box .input-group-btn .btn:hover {
+            opacity: 0.88;
+        }
+        .search-box .input-group-btn .btn .fa {
+            margin-right: 4px;
+        }
+
+        /* 友情提示滚动 */
+        .tips-bar {
+            max-width: 640px;
+            margin: 14px auto 0;
+            overflow: hidden;
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+        }
+        .tips-bar-inner {
+            display: flex;
+            animation: tipsScroll 20s linear infinite;
+            white-space: nowrap;
+        }
+        .tips-bar-inner span {
+            display: inline-block;
+            padding: 0 28px;
+            font-size: 12px;
+            color: #999;
+            flex-shrink: 0;
+        }
+        .tips-bar-inner span i {
+            margin-right: 4px;
+            background: linear-gradient(135deg, #e74c3c, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        @keyframes tipsScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .tips-bar:hover .tips-bar-inner {
+            animation-play-state: paused;
+        }
+
+        /* 导航卡片 */
+        .nav-section {
+            width: 100%;
+            max-width: 780px;
+        }
+        .nav-group {
+            margin-bottom: 28px;
+        }
+        .nav-group-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #bbb;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            padding-left: 4px;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-link-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: #555;
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all .3s;
+            white-space: nowrap;
+        }
+        .nav-link-item:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #e74c3c, #3498db);
+            border-color: transparent;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(231,76,60,0.18);
+        }
+        .nav-link-item .fa {
+            font-size: 15px;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 18px 0;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 12px;
+            color: #ccc;
+            letter-spacing: 1px;
+        }
+        .footer .footer-brand {
+            margin-bottom: 4px;
+        }
+        .footer .footer-link {
+            color: #bbb;
+            text-decoration: none;
+        }
+        .footer .footer-link:hover {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .footer .footer-divider {
+            margin: 0 10px;
+            color: #ddd;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .main-wrapper {
+                padding-top: 36px;
+                padding-bottom: 30px;
+            }
+            .logo-area h1 {
+                font-size: 32px;
+            }
+            .search-box {
+                max-width: 100%;
+                margin-bottom: 36px;
+            }
+            .search-box .form-control {
+                height: 46px;
+                font-size: 14px;
+            }
+            .search-box .input-group-btn .btn {
+                height: 46px;
+                padding: 6px 18px;
+                font-size: 13px;
+            }
+            .nav-links {
+                gap: 8px;
+            }
+            .nav-link-item {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+            .nav-group-title {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 主体 -->
+<div class="main-wrapper">
+
+    <!-- Logo -->
+    <div class="logo-area">
+        <h1>跨境导航</h1>
+        <p class="slogan">精选全球优质的跨境电商软件和服务</p>
+    </div>
+
+    <!-- 搜索框 -->
+    <div class="search-box">
+        <div class="input-group">
+            <input type="text" id="searchInput" class="form-control" placeholder="搜索你想要的..." autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn" id="searchBtn" type="button">
+                    <i class="fa fa-search"></i> 搜索
+                </button>
+            </span>
+        </div>
+        <div class="tips-bar">
+            <div class="tips-bar-inner">
+                <span><i class="fa fa-bullhorn"></i> 欢迎使用 Zhtik 搜索导航，祝你使用愉快！</span>
+                <span><i class="fa fa-heart"></i> 每日一句：简洁是智慧的灵魂，冗长是肤浅的藻饰。</span>
+                <span><i class="fa fa-star"></i> 小提示：输入关键词后按回车键即可快速搜索 ~</span>
+                <span><i class="fa fa-lightbulb-o"></i> 收藏本站，随时开启高效上网体验！</span>
+                <!-- 复制一遍实现无缝循环 -->
+                <span><i class="fa fa-bullhorn"></i> 欢迎使用 Zhtik 搜索导航，祝你使用愉快！</span>
+                <span><i class="fa fa-heart"></i> 每日一句：简洁是智慧的灵魂，冗长是肤浅的藻饰。</span>
+                <span><i class="fa fa-star"></i> 小提示：输入关键词后按回车键即可快速搜索 ~</span>
+                <span><i class="fa fa-lightbulb-o"></i> 收藏本站，随时开启高效上网体验！</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航区块 -->
+    <div class="nav-section">
+        <div class="nav-group">
+            <div class="nav-group-title">常用工具</div>
+            <div class="nav-links">
+                <a href="https://translate.google.cn" target="_blank" class="nav-link-item">
+                    <i class="fa fa-language"></i> 翻译
+                </a>
+                <a href="https://mail.qq.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-envelope"></i> QQ邮箱
+                </a>
+                <a href="https://pan.baidu.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-cloud"></i> 百度网盘
+                </a>
+                <a href="https://www.processon.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-sitemap"></i> ProcessOn
+                </a>
+                <a href="https://codepen.io" target="_blank" class="nav-link-item">
+                    <i class="fa fa-codepen"></i> CodePen
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">技术社区</div>
+            <div class="nav-links">
+                <a href="https://github.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-github"></i> GitHub
+                </a>
+                <a href="https://stackoverflow.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-stack-overflow"></i> Stack Overflow
+                </a>
+                <a href="https://www.jianshu.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-pencil"></i> 简书
+                </a>
+                <a href="https://juejin.cn" target="_blank" class="nav-link-item">
+                    <i class="fa fa-diamond"></i> 掘金
+                </a>
+                <a href="https://segmentfault.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-question-circle"></i> SegmentFault
+                </a>
+                <a href="https://www.csdn.net" target="_blank" class="nav-link-item">
+                    <i class="fa fa-code"></i> CSDN
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">视频 · 学习</div>
+            <div class="nav-links">
+                <a href="https://www.bilibili.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-television"></i> Bilibili
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-youtube-play"></i> YouTube
+                </a>
+                <a href="https://www.imooc.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-graduation-cap"></i> 慕课网
+                </a>
+                <a href="https://developer.mozilla.org" target="_blank" class="nav-link-item">
+                    <i class="fa fa-book"></i> MDN
+                </a>
+                <a href="https://leetcode.cn" target="_blank" class="nav-link-item">
+                    <i class="fa fa-trophy"></i> LeetCode
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-group-title">资讯 · 生活</div>
+            <div class="nav-links">
+                <a href="https://weibo.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-weibo"></i> 微博
+                </a>
+                <a href="https://www.zhihu.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-lightbulb-o"></i> 知乎
+                </a>
+                <a href="https://www.douban.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-film"></i> 豆瓣
+                </a>
+                <a href="https://music.163.com" target="_blank" class="nav-link-item">
+                    <i class="fa fa-music"></i> 网易云音乐
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p class="footer-brand">Zhtik © 2026 · 微薄利 版权所有</p>
+        <p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="nofollow" class="footer-link">鲁ICP备2025144109号-11</a>
+            <span class="footer-divider">|</span>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" rel="nofollow" class="footer-link">
+                <i class="fa fa-shield"></i> 鲁公网安备37130202372909号
+            </a>
+        </p>
+    </div>
+</div>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+    // 搜索
+    function doSearch(){
+        var keyword = $('#searchInput').val().trim();
+        if (!keyword) return;
+        var url = 'https://www.baidu.com/s?wd=' + encodeURIComponent(keyword);
+        window.open(url, '_blank');
+    }
+
+    $('#searchBtn').click(doSearch);
+
+    $('#searchInput').keydown(function(e){
+        if (e.which === 13) doSearch();
+    });
+});
+</script>
+
+</body>
+</html>
