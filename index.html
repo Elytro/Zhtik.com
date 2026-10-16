@@ -1,23 +1,404 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zhtik.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ZHTik - 免费在线工具箱，为开发者、设计师和创作者提供 200+ 免费在线工具，无需安装、无需注册，全部在浏览器中运行。" />
+    <title>ZHTik - 免费在线工具箱</title>
+    <link href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, "Segoe UI", sans-serif; display: flex;
-               min-height: 100vh; align-items: center; justify-content: center;
-               margin: 0; background: #f5f5f5; color: #333; }
-        .card { background: #fff; padding: 3rem 4rem; border-radius: 12px;
-                box-shadow: 0 4px 16px rgba(0,0,0,.08); text-align: center; }
-        h1 { margin: 0 0 .5rem; font-size: 1.6rem; }
-        p { margin: 0; color: #888; }
+        body {
+            font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+            color: #333;
+            background: #fff;
+            padding-top: 60px;
+        }
+        a { color: #333; }
+        a:hover, a:focus { color: #000; text-decoration: none; }
+
+        /* 导航 */
+        .navbar-zh {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            min-height: 60px;
+        }
+        .navbar-zh .navbar-brand {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 30px;
+        }
+        .navbar-zh .navbar-nav > li > a {
+            line-height: 30px;
+            color: #666;
+        }
+        .navbar-zh .navbar-nav > li > a:hover { color: #000; background: none; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 0 50px;
+        }
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0 0 18px;
+        }
+        .hero p.lead {
+            font-size: 16px;
+            color: #888;
+            max-width: 640px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+        .hero .badge-group { margin-bottom: 10px; }
+        .hero .label {
+            display: inline-block;
+            border: 1px solid #e5e5e5;
+            border-radius: 3px;
+            color: #666;
+            font-weight: 400;
+            font-size: 13px;
+            padding: 6px 14px;
+            margin: 4px;
+            background: #fafafa;
+        }
+
+        /* 分类 */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 50px 0 20px;
+            border-left: 3px solid #333;
+            padding-left: 10px;
+        }
+        .tool-card {
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 18px;
+            margin-bottom: 20px;
+            background: #fff;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            display: block;
+        }
+        .tool-card:hover {
+            border-color: #333;
+            box-shadow: 0 4px 16px rgba(0,0,0,.06);
+        }
+        .tool-card h4 {
+            margin: 0 0 6px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .tool-card h4 i { width: 20px; color: #888; }
+        .tool-card p {
+            font-size: 13px;
+            color: #999;
+            margin: 0 0 8px;
+            line-height: 1.6;
+        }
+        .tool-card .more {
+            font-size: 13px;
+            color: #666;
+        }
+        .tool-card:hover .more { color: #000; }
+
+        /* 页脚 */
+        footer {
+            margin-top: 70px;
+            padding: 30px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            line-height: 2;
+        }
+        footer a { color: #999; }
+        footer a:hover { color: #333; }
+        .beian-link img { display: none; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>zhtik.com</h1>
-        <p>Site initialized by oject.php</p>
+
+<!-- 导航 -->
+<nav class="navbar navbar-fixed-top navbar-zh">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ZHTik</a>
+        </div>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="nav navbar-nav">
+                <li><a href="#ai">AI 工具</a></li>
+                <li><a href="#dev">开发者</a></li>
+                <li><a href="#convert">计算转换</a></li>
+                <li><a href="#image">图像设计</a></li>
+                <li><a href="#life">生活常用</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search" onsubmit="return false;">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" id="toolSearch" placeholder="搜索工具 (Ctrl + K)" style="border-radius: 3px; box-shadow: none; border-color: #eee;">
+                    <i class="fa fa-search form-control-feedback" style="color:#bbb;"></i>
+                </div>
+            </form>
+        </div>
     </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="container">
+        <h1>免费在线工具箱</h1>
+        <p class="lead">ZHTik 是一个免费在线工具平台，为开发者、设计师、内容创作者以及每一个需要快速完成任务的人而打造 —— 无需安装软件、无需注册账号、完全免费。所有工具均在浏览器中运行，数据不出本地。</p>
+        <div class="badge-group">
+            <span class="label"><i class="fa fa-gift"></i> 200+ 免费工具</span>
+            <span class="label"><i class="fa fa-lock"></i> 隐私优先</span>
+            <span class="label"><i class="fa fa-bolt"></i> 无需安装</span>
+            <span class="label"><i class="fa fa-mobile"></i> 全设备支持</span>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- AI 工具 -->
+    <div class="section-title" id="ai">AI 工具</div>
+    <div class="row tool-list">
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-magic"></i> AI 提示词生成器</h4>
+                <p>一键生成高质量中英文 Prompt</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-book"></i> AI 提示词库</h4>
+                <p>精选提示词模板，分类检索</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-file-text-o"></i> 文章摘要生成</h4>
+                <p>快速提取长文核心内容</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-calculator"></i> AI 成本计算器</h4>
+                <p>估算各大模型 API 调用费用</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 开发者工具 -->
+    <div class="section-title" id="dev">开发者工具</div>
+    <div class="row tool-list">
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-code"></i> JSON 格式化</h4>
+                <p>格式化、压缩、校验 JSON</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-key"></i> JWT 解码器</h4>
+                <p>解析并查看 Token 内容</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-flask"></i> 正则表达式测试</h4>
+                <p>实时匹配测试与高亮</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-barcode"></i> UUID 生成器</h4>
+                <p>支持 v1 / v4 / v7 版本</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-clock-o"></i> Unix 时间戳转换</h4>
+                <p>时间戳与日期互转</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-shield"></i> Hash 生成器</h4>
+                <p>MD5 / SHA-1 / SHA-256</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-link"></i> URL 编解码</h4>
+                <p>快速编码与解码 URL</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-lock"></i> 密码生成器</h4>
+                <p>生成高强度随机密码</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 计算与转换 -->
+    <div class="section-title" id="convert">计算与转换</div>
+    <div class="row tool-list">
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-usd"></i> 贷款计算器</h4>
+                <p>等额本息 / 等额本金测算</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-exchange"></i> 单位换算</h4>
+                <p>长度、重量、温度等互转</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-globe"></i> 时区转换</h4>
+                <p>全球时区对照与换算</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-heartbeat"></i> BMI 计算器</h4>
+                <p>身体质量指数评估</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 图像与设计 -->
+    <div class="section-title" id="image">图像与设计</div>
+    <div class="row tool-list">
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-picture-o"></i> 图片压缩</h4>
+                <p>本地压缩，不上传服务器</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-paint-brush"></i> CSS 渐变生成</h4>
+                <p>可视化调配渐变背景</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-qrcode"></i> 二维码生成器</h4>
+                <p>自定义尺寸与颜色</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-eyedropper"></i> 取色器</h4>
+                <p>调色板与颜色格式转换</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 生活常用 -->
+    <div class="section-title" id="life">生活常用</div>
+    <div class="row tool-list">
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-birthday-cake"></i> 年龄计算器</h4>
+                <p>精确到天的年龄测算</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-file-pdf-o"></i> PDF 压缩</h4>
+                <p>减小 PDF 文件体积</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-check-square-o"></i> 待办清单</h4>
+                <p>简单好用的任务管理</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <a class="tool-card" href="#">
+                <h4><i class="fa fa-random"></i> 决策助手</h4>
+                <p>纠结时刻，帮你做选择</p>
+                <span class="more">使用工具 →</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer>
+    <div class="container">
+        <p>© 2026 ZHTik.com 保留所有权利 · 免费在线工具箱</p>
+        <p>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">鲁ICP备2025144109号-11</a>
+            <a class="beian-link" href="https://beian.mps.gov.cn/#/query/webSearch" target="_blank" rel="nofollow noopener">
+                <img src="" alt="公安备案图标">
+            </a>
+        </p>
+    </div>
+</footer>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+    // Ctrl + K 聚焦搜索框
+    $(document).on('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            $('#toolSearch').focus();
+        }
+    });
+
+    // 简单搜索过滤
+    $('#toolSearch').on('input', function () {
+        var kw = $(this).val().trim().toLowerCase();
+        $('.tool-card').each(function () {
+            var text = $(this).text().toLowerCase();
+            $(this).closest('.col-sm-4').toggle(!kw || text.indexOf(kw) > -1);
+        });
+        $('.section-title').each(function () {
+            var $cards = $(this).next('.tool-list').find('.col-sm-4:visible');
+            $(this).toggle($cards.length > 0);
+        });
+    });
+</script>
 </body>
 </html>
